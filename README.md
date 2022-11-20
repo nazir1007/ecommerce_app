@@ -18,7 +18,7 @@
 - redux - v4.2.0
 - react-redux - v8.0.5
 - react-router-dom - v6.4.3
-- react-tastify - v9.1.1
+- react-toastify - v9.1.1
 - json-server -v0.17.1 
 
 
