@@ -31,11 +31,11 @@ const ShowProducts = () => {
 
   //  ---- cart_submit function for fetching product   ----  //
   const cart_submit = async (payload) => {
-    // const devEnv = process.env.NODE_ENV !== "production";
-    // const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
+    const devEnv = process.env.NODE_ENV !== "production";
+    const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
     //  ----   Api-Link for Cart ----  //
-    // await fetch(devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL, {
-    await fetch("http://localhost:5000/cart", {
+    await fetch(devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL, {
+      // await fetch("http://localhost:5000/cart", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
