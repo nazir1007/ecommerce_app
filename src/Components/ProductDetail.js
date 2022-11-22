@@ -29,7 +29,7 @@ const Product = () => {
     const devEnv = process.env.NODE_ENV !== "production";
     const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
     //  ----   Api-Link for Cart ----  //
-    await fetch(`${devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL}`, {
+    await fetch(devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
