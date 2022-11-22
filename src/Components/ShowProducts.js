@@ -35,13 +35,16 @@ const ShowProducts = () => {
     // const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
     //  ----   Api-Link for Cart ----  //
     //await fetch(devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL, {
-     await fetch("http://localhost:5000/cart", {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
+    await fetch(
+      "https://nazir1007-supreme-space-happiness-wjr7v9xrx7vh5v7r-5000.preview.app.github.dev/cart",
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    )
       .then((res) => {
         if (res.status !== 201) {
           return;
@@ -67,7 +70,8 @@ const ShowProducts = () => {
   };
 
   //  ---- Api-Link for Products  ----  //
-   const url = "http://localhost:5000/products";
+  const url =
+    "https://nazir1007-supreme-space-happiness-wjr7v9xrx7vh5v7r-5000.preview.app.github.dev/products";
 
   //  ---- getProducts function for getting product  ----  //
   const getProducts = async () => {
@@ -76,7 +80,7 @@ const ShowProducts = () => {
     // const res = await fetch(
     //   `${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}`
     // );
-     const res = await fetch(url);
+    const res = await fetch(url);
     let componentMounted = true;
 
     if (componentMounted) {
