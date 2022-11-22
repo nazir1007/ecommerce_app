@@ -19,13 +19,18 @@ const Cart = ({ item }) => {
 
   //   ----  api- link  ---- //
 
-  const url = "http://localhost:5000/cart";
+  //const url = "http://localhost:5000/cart";
 
   //   --- cart_delete function   ----  //
   const cart_delete = async (id) => {
-    await fetch(`${url}/${id}`, {
-      method: "DELETE",
-    })
+    const devEnv = process.env.NODE_ENV !== "production";
+    const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
+    await fetch(
+      `${devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL}/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => {
         if (res.status !== 200) {
           toast.info("Something went wrong");

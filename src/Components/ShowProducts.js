@@ -31,14 +31,19 @@ const ShowProducts = () => {
 
   //  ---- cart_submit function for fetching product   ----  //
   const cart_submit = async (payload) => {
+    const devEnv = process.env.NODE_ENV !== "production";
+    const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
     //  ----   Api-Link for Cart ----  //
-    await fetch("http://localhost:5000/cart", {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
+    await fetch(
+      `${devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL}`,
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    )
       .then((res) => {
         if (res.status !== 201) {
           return;
@@ -70,7 +75,9 @@ const ShowProducts = () => {
   const getProducts = async () => {
     const devEnv = process.env.NODE_ENV !== "production";
     const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
-    const res = await fetch(devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL);
+    const res = await fetch(
+      `${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}`
+    );
     let componentMounted = true;
 
     if (componentMounted) {

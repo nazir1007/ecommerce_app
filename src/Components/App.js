@@ -34,8 +34,12 @@ import { useDispatch } from "react-redux";
 // ----  getCartProducts Function for getting cart product  ---- //
 const getCartProducts = async () => {
   //--- api Link  --- //
-  const url = "http://localhost:5000/cart";
-  const res = await fetch(url);
+  // const url = "http://localhost:5000/cart";
+  const devEnv = process.env.NODE_ENV !== "production";
+  const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
+  const res = await fetch(
+    `${devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL}`
+  );
   return res.clone().json();
 };
 
