@@ -64,11 +64,13 @@ const ShowProducts = () => {
   };
 
   //  ---- Api-Link for Products  ----  //
-  const url = "http://localhost:5000/products";
+  //const url = "http://localhost:5000/products";
 
   //  ---- getProducts function for getting product  ----  //
   const getProducts = async () => {
-    const res = await fetch(url);
+    const devEnv = process.env.NODE_ENV !== "production";
+    const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+    const res = await fetch(devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL);
     let componentMounted = true;
 
     if (componentMounted) {

@@ -62,8 +62,12 @@ const Product = () => {
   useEffect(() => {
     //  ---- getProduct Function for getting product from Api  ----  //
     const getProduct = async () => {
+      const devEnv = process.env.NODE_ENV !== "production";
+      const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
       //  ---- api-link  ----  //
-      const res = await fetch(`http://localhost:5000/products/${id}`);
+      const res = await fetch(
+        `${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${id}`
+      );
       setProduct(await res.json());
     };
     getProduct();
