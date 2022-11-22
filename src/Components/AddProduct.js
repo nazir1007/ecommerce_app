@@ -10,10 +10,12 @@ const AddProduct = () => {
 
   //  ----- onCreate for creating new data   -----  //
   const onCreate = async (payload) => {
-    const devEnv = process.env.NODE_ENV !== "production";
-    const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+    // const devEnv = process.env.NODE_ENV !== "production";
+    // const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
     //  --- Api Link ---- //
-    await fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}`, {
+    const url = "http://localhost:5000/products";
+    // await fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}`, {
+    await fetch(url, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

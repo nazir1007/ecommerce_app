@@ -19,15 +19,16 @@ const SingleProduct = ({
   const [formRating, setFormRating] = useState(product.rating);
 
   //    -----  Api-Link  -----   //
-  //const url = "http://localhost:5000/products";
+  const url = "http://localhost:5000/products";
 
   // -----  handleEdit function for editing product   -----  //
   const handleEdit = (e) => {
     e.preventDefault();
-    const devEnv = process.env.NODE_ENV !== "production";
-    const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+    // const devEnv = process.env.NODE_ENV !== "production";
+    // const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
 
-    fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${product.id}`, {
+    // fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${product.id}`, {
+    fetch(`${url}/${product.id}`, {
       method: "PATCH",
       body: JSON.stringify({
         title: formTitle,
@@ -88,9 +89,10 @@ const SingleProduct = ({
 
   //  --------handleDelte function for deleting product from DB -----------  //
   const handleDelete = async (id) => {
-    const devEnv = process.env.NODE_ENV !== "production";
-    const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
-    await fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${id}`, {
+    // const devEnv = process.env.NODE_ENV !== "production";
+    // const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+    // await fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${id}`, {
+    await fetch(`${url}/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
