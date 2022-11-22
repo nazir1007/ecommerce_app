@@ -19,7 +19,8 @@ const SingleProduct = ({
   const [formRating, setFormRating] = useState(product.rating);
 
   //    -----  Api-Link  -----   //
-  const url = "http://localhost:5000/products";
+  const url =
+    "https://nazir1007-supreme-space-happiness-wjr7v9xrx7vh5v7r-5000.preview.app.github.dev/products";
 
   // -----  handleEdit function for editing product   -----  //
   const handleEdit = (e) => {
