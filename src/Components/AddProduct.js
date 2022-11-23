@@ -13,7 +13,7 @@ const AddProduct = () => {
     // const devEnv = process.env.NODE_ENV !== "production";
     // const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
     //  --- Api Link ---- //
-    const url = "http://localhost:5000/products";
+    const url = "https://necomapp.herokuapp.com/products";
     // await fetch(`${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}`, {
     await fetch(url, {
       method: "POST",

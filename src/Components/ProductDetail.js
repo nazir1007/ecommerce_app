@@ -70,7 +70,7 @@ const Product = () => {
       // const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
 
       //  ---- api-link  ----  //
-      const url = "https://necomapp.herokuapp.com/api";
+      const url = "https://necomapp.herokuapp.com/products";
       // const res = await fetch(
       //   `${devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL}/${id}`
       // );

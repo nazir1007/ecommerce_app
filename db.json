@@ -224,6 +224,15 @@
       "image": "https://m.media-amazon.com/images/I/81tD7OZ0RXL._SX450_.jpg",
       "rating": "4.3",
       "id": 25
+    },
+    {
+      "title": "ghfjgh",
+      "description": "kjhjl",
+      "price": "67",
+      "category": "hgfj",
+      "image": "http://localhost:3000/add",
+      "rating": "5",
+      "id": 26
     }
   ],
   "cart": []

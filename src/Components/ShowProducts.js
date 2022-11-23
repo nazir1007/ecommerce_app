@@ -67,7 +67,7 @@ const ShowProducts = () => {
   };
 
   //  ---- Api-Link for Products  ----  //
-  const url = "https://necomapp.herokuapp.com/api";
+  const url = "https://necomapp.herokuapp.com/products";
 
   //  ---- getProducts function for getting product  ----  //
   const getProducts = async () => {
