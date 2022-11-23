@@ -19,7 +19,7 @@ const SingleProduct = ({
   const [formRating, setFormRating] = useState(product.rating);
 
   //    -----  Api-Link  -----   //
-  const url = "http://localhost:5000/products";
+  const url = "https://necomapp.herokuapp.com/api";
 
   // -----  handleEdit function for editing product   -----  //
   const handleEdit = (e) => {
