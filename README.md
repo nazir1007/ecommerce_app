@@ -4,8 +4,8 @@
 - In Cart we can add product and delete product from cart.
 - In this project also used react hookes, redux, react-redux, react-router-dom, react-toastify and Json-server. 
 - Json-server Api for -
-    - Products Api Link:- http://localhost:5000/products,
-    - Cart Api Link:- http://localhost:5000/cart
+    - Products Api Link:- https://necomapp.herokuapp.com/products,
+    - Cart Api Link:- https://necomapp.herokuapp.com/cart
 - In this project Bootstarp CSS and Font-awesome Links are used.
 
 ## src folder
