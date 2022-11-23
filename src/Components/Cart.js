@@ -19,15 +19,11 @@ const Cart = ({ item }) => {
 
   //   ----  api- link  ---- //
 
-  const url = "http://localhost:5000/cart";
+  const url = "https://necomapp.herokuapp.com/cart";
 
   //   --- cart_delete function   ----  //
   const cart_delete = async (id) => {
-    // const devEnv = process.env.NODE_ENV !== "production";
-    // const { REACT_APP_DEV_CART_URL, REACT_APP_PROD_CART_URL } = process.env;
-    // await fetch(
-    //   `${devEnv ? REACT_APP_DEV_CART_URL : REACT_APP_PROD_CART_URL}/${id}`,
-    //   {
+    
     await fetch(`${url}/${id}`, {
       method: "DELETE",
     })
